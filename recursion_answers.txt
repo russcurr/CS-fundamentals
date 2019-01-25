@@ -62,6 +62,22 @@ console.log(getCount(test))
 >A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
 
 
+function isPal(str) {
+    var strLen = str.length;
+    if (strLen === 0 || strLen === 1) {
+        return true;
+    }
+
+    if (str[0] === str[strLen - 1]) {
+        return isPal( str.slice(1, strLen - 1) );
+    }
+
+    return false;
+};
+
+console.log(isPal('racecar'));
+
+
 
 >Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". 
 Explain why this behavior exhibits properties of recursion.

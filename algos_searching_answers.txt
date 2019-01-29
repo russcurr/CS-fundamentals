@@ -1,0 +1,52 @@
+>What is a real-life scenario that uses linear search?
+
+Searching for someone on a list for a dinner reservation.  You'd have to search line by line until the correct name is found.
+
+>What is a real-life scenario that uses binary search?
+
+Searching for your room in a hotel.  You go to your correct floor, but then reach an intersection that divides the rooms into two
+groups.  You can then look for the room in one of the groups.
+
+>Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+Seven 
+
+>Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+Three 
+
+>Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+Binary search would not work in this case as the list of items must first be sorted.  You'd have to search linear.
+
+>Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+Binary would be best for this search because the collection is sorted.  Linear in this case would take longer.
+
+>You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+function binary(arr, target){
+	var low = arr[0];
+	var high = arr[arr.length - 1];
+	WHILE (low <= high){
+		var mid = (arr.indexOf(low) + arr.indexOf(high)) / 2;
+		if (arr[mid] > target){
+			high = arr[mid -1];
+		}else if (arr[mid] < target) {
+			low = arr[mid + 1];
+		}else {
+			return arr[mid];
+		}
+	}
+}
+
+>You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+
+function linear(arr,target){
+	for (var i = 0;i < arr.length;i++){
+		if (target == arr[i]){
+			return i;
+		}
+	}
+}

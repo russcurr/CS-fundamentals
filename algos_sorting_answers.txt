@@ -1,0 +1,59 @@
+>Write pseudocode for bubble sort.
+
+```
+FUNCTION bubbleSort(collection)
+
+   REPEAT
+     SET swapped to false
+
+
+     FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+
+       IF collection[i] > collection[i + 1] THEN
+         SET tmp to collection[i]
+         SET collection[i] to collection[i + 1]
+         SET collection[i + 1] to tmp
+         SET swapped to true
+       END IF
+     END FOR
+   UNTIL swapped is FALSE
+
+   RETURN collection
+ END FUNCTION
+ ```
+
+>Write pseudocode for quicksort.
+
+```
+FUNCTION quickSort(collection)
+   SET pivot to LAST INDEX of collection
+   SET greater to empty array
+   SET lesser to empty array
+
+   FOR i = FIRST INDEX of collection to LAST INDEX of collection -1
+     IF collection[i] > pivot THEN
+       APPEND collection[i] to greater
+     ELSE
+       APPEND collection[i] to lesser
+     END IF
+   END FOR
+   CALL quickSort WITH lesser RETURNING sortedLesser
+   CALL quickSort WITH greater RETURNING sortedGreater
+   CALL concatate WITH sortedlesser and sortedGreater
+END FUNCTION
+
+```
+
+>We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. 
+After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more 
+efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+merge sort and quicksort have a best and average case time complexity  
+of `(O)n log n` which is better than `(O)n^2` average and worst case of the other sorting algorithms.
+
+>All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. 
+What is the ideal input for bucket sort?
+
+Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. 
+Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket 
+sorting algorithm. Bucket sort is mainly useful when input is uniformly distributed over a range.

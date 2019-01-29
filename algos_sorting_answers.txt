@@ -48,12 +48,15 @@ END FUNCTION
 After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more 
 efficient than the others. Walking through each algorithm with a few sample collections may help.
 
-merge sort and quicksort have a best and average case time complexity  
-of `(O)n log n` which is better than `(O)n^2` average and worst case of the other sorting algorithms.
+Like binary search, quicksort is also a divide and conquer algorithm. Quicksort has three steps. First, it picks a pivot point. Quicksort then iterates over the collection and compares each item to the pivot point, if the item is greater than the pivot point then it is moved to the right of the pivot point, and the item at the pivot points shifts one index to the left.
+After we've moved items that are greater than pivot point, quick sort recursively applies the previous step to the left and right sides of the collection. 
+
+Conceptually, merge sort has two steps. Merge sort breaks a collection of n items into n sub-collections. Merge sort then merges individual sub-collections to produce sorted sub-collections. It does this repeatedly until there are no sub-collections to sort.
+
+Both merge sort and quicksort have better time complexity than the other sort functions.
 
 >All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. 
 What is the ideal input for bucket sort?
 
-Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. 
-Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket 
-sorting algorithm. Bucket sort is mainly useful when input is uniformly distributed over a range.
+Bucket sort, or bin sort, is a sorting algorithm that distributes elements of an array into buckets. Each bucket is then sorted using a sorting algorithm, or by recursively applying the bucket 
+sorting algorithm. Bucket sort is useful when input is uniformly distributed over a range.

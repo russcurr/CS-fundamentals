@@ -4,12 +4,9 @@
 FUNCTION bubbleSort(collection)
 
    REPEAT
-     SET swapped to false
-
-
-     FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
-
-       IF collection[i] > collection[i + 1] THEN
+         SET swapped to false
+   FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+   IF collection[i] > collection[i + 1] THEN
          SET tmp to collection[i]
          SET collection[i] to collection[i + 1]
          SET collection[i + 1] to tmp
@@ -17,7 +14,6 @@ FUNCTION bubbleSort(collection)
        END IF
      END FOR
    UNTIL swapped is FALSE
-
    RETURN collection
  END FUNCTION
  ```
